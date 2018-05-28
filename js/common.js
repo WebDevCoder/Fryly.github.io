@@ -1,24 +1,32 @@
 $(function() {
-    $('.owl-carousel').owlCarousel({
+    var owl = $(".owl-carousel");
+        owl.owlCarousel({
         loop:true,
-        margin:0,
+        margin: 0,
+        nav: false,
         autoplay : true,
         dots:  false,
         autoplayTimeout : 4500,
         responsive:{
             0:{
+                items:1
+            },
+            800:{
                 items:2
             },
-            600:{
-                items:2
-            },
-            1000:{
+            1200:{
                 items:2
             }
         }
-    })
-
+    });
+    $(".next_button").click(function(){
+        owl.trigger("owl.next");
+    });
+    $(".prev_button").click(function(){
+        owl.trigger("owl.prev");
+    });
 });
+
 $(function() {
 
     $('#menu-menu').mmenu({
