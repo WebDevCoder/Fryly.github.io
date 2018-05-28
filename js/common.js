@@ -3,7 +3,7 @@ $(function() {
         owl.owlCarousel({
         loop:true,
         margin: 0,
-        nav: false,
+        autoHeight: true,
         autoplay : true,
         dots:  false,
         autoplayTimeout : 4500,
@@ -19,12 +19,15 @@ $(function() {
             }
         }
     });
-    $(".next_button").click(function(){
-        owl.trigger("owl.next");
-    });
-    $(".prev_button").click(function(){
-        owl.trigger("owl.prev");
-    });
+    $('.next_button').click(function() {
+        owl.trigger('next.owl.carousel');
+    })
+// Go to the previous item
+    $('.prev_button').click(function() {
+        // With optional speed parameter
+        // Parameters has to be in square bracket '[]'
+        owl.trigger('prev.owl.carousel', [300]);
+    })
 });
 
 $(function() {
@@ -32,7 +35,7 @@ $(function() {
     $('#menu-menu').mmenu({
         extensions: ['effect-menu-slide', 'pagedim-black'],
         navbar: {
-            title: '<h1>ГУК Ветковская районная библиотека</h1>'
+            title: 'ГУК Ветковская районная библиотека'
         }
     });
 
