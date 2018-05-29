@@ -41,7 +41,7 @@ $(function() {
 
     var $menu = $("#menu-menu").mmenu();
 
-    var $icon = $("#mmenu-icon");
+    var $icon = $(".hamburger"); //скоре всего не правильно задал класс для иконки
 
     var API = $menu.data( "mmenu" );
 
